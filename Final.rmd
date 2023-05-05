@@ -204,6 +204,28 @@ colPerc(table1)
 These numerical results show specific percentages of LGBTQ members that got covid921 after being given the placebo and the vaccine. Among these participants, 87% got covid921 after taking the vaccine, while approximately 13% of LGBTQ members that were given the placebo contracted covid921. The vaccine is clearly ineffective in preventing covid921 in LGBTQ members and it is not recommended. Those who took the vaccine were much more likely to contract covid921. The odds of getting covid921 while taking the vaccine are 1:6. The LGBTQ members that were given the vaccine were six times more likely to get covid921 than those who were given the placebo.
 
 ## Inferential
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+gaysfish <- fisher.test(table1)
+gaysfish
+```
+```{r}
+effect <- gaysfish$p.value/(gaysfish$p.value +1)
+effectivenessgays = gaysfish$estimate/(gaysfish$estimate +1)*100
+print(effectivenessgays)
+```
+```{r}
+low=(gaysfish$conf.int[1]/(gaysfish$conf.int[1] +1))*100
+hi=(gaysfish$conf.int[2]/(gaysfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+From the data above the information we are focusing on the most are the results we gathered from the Fisher's Exact test. The p-value displayed above is pretty small with the value of 0.00000001. This extremely small number, shows us that it is highly unlikely that these results will occur by chance.
+
+The null hypothesis is rejected in favor of the alternative. The vaccine is completely ineffective in preventing the chances of getting covid921 in individuals who identify as LGBTQ members.
+
+The odd ratio above illustrates a ratio of 0.16. This means that the LGBTQ members who received the vaccine were six times more likely to get covid921 than those who were given a placebo. 
 
 ## Effectiveness Confidence Interval
 
