@@ -84,8 +84,8 @@ malefish
 ```
 ```{r}
 effect <- malefish$p.value/(malefish$p.value +1)
-effectivenessmales = malefish$estimate/(malefish$estimate +1)*100
-print(effectivenessmales)
+effectivenessmale = malefish$estimate/(malefish$estimate +1)*100
+print(effectivenessmale)
 ```
 ```{r}
 low=(malefish$conf.int[1]/(malefish$conf.int[1] +1))*100
@@ -297,4 +297,16 @@ Above is the effectiveness for the covid921 vaccine for the drug user population
 The odds ratio is approximately how effective the vaccine is. The odds ratio for the drug user population can be seen above as 17. The effectiveness confidence interval for the drug user population is between 8.57 to 29.47.
 
 # Overall Results and Conclusions
+The covid921 vaccine was very effective in protecting males against the contraction of the disease. The covid921 effectiveness was `r effectivenessmale` for males.
 
+The covid921 vaccine was unsuccessful in protecting females against covid921.The covid921 effectiveness was `r effectivenessfemale`.
+
+The covid921 vaccine was not effective in treating people who identified as LGBTQ. The individuals who identified as LGBTQ and took the vaccine were six times as likely to get covid-19 than those taking the placebo.The covid-19 effectiveness was `r effectivenessgays` for LGBTQ individuals.
+
+The individuals that were drug users were ineffectively protected by the vaccine.
+
+The drug users  that took the vaccine were five times as likely to get covid921 than those taking the placebo.The covid921 effectiveness was `r effectivenessdrug` for drug users.
+
+If you are a female, identify as LGBTQ, or a drug user it is not recommended to receive the vaccine. However, if you are a male the vaccine was reported to have been effective.
+
+The null that there is no difference in taking the vaccine can be accepted to the categories of females, LGBTQ and drug users. The alternative, that the vaccine works and is effective, can be accepted for the males.
